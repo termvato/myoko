@@ -5,17 +5,17 @@
 <h1 align="center">myoko</h1>
 
 <p align="center">
-  <i>a tiny eyeball in a top hat who lives next to your notch<br>and gets very, very bloodshot if you don't take breaks.</i>
+  <i>i live by your notch in my tall top hat,<br>and i go very red when you sit like that.</i>
 </p>
 
 ---
 
 hi, i'm myoko 👁️🎩
 
-my name is *my oko*: "my eye". *oko* is old russian for "eye", and i am very much yours. i sit in your menu bar and watch you work. the longer you stare at your screen, the redder i get. when it's time for a break, i come and get you.
+my name is *my oko*, which means "my eye". *oko* is old russian for "eye". i sit in your menu bar and watch you work. the longer you stare at your screen, the redder i get. when it's time for a break, i come and get you, hat and all.
 
 - 👀 **every 20 minutes:** look at something far away (6 m or more) for 20 seconds
-- 🚶 **every hour:** go for a little walk. i hold the screen for 2 minutes so you actually go
+- 🚶 **every hour:** go for a little walk, and don't just say so. i hold the screen for 2 minutes, so you actually go
 - 🧅 **not into eyeballs?** pick the onion from the menu. it's much calmer than me
 
 ![myoko's moods, the bloodshot ramp, and the onion](docs/characters.png)
@@ -81,7 +81,7 @@ a bit, honestly. the evidence is modest:
 - **walking breaks:** a meta-analysis of short lab trials found light walking breaks lower blood sugar after meals better than standing breaks. ([Buffey et al., 2022](https://link.springer.com/article/10.1007/s40279-022-01649-4))
 - **how often:** in a small trial of 11 adults, only 5 minutes every 30 minutes significantly reduced the blood sugar rise, but every schedule, hourly included, lowered blood pressure. ([Duran et al., 2023](https://sedentarybehaviour.org/2023/05/31/breaking-up-prolonged-sitting-to-improve-cardiometabolic-risk-dose-response-analysis-of-a-randomized-crossover-trial))
 
-so i won't fix your eyes. i'll just make you look away from me every now and then, which is a little ironic.
+i'm a pixel, not a pill, so i can't promise you'll heal, but looking away now and then is a pretty good deal. (yes, an eyeball asking you to stop looking at it is a little ironic.)
 
 ## 📜 license
 
