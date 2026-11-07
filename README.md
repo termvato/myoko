@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/moko.png" width="160" alt="Moko, a pixel eyeball in a top hat">
+  <img src="docs/myoko.png" width="160" alt="Myoko, a pixel eyeball in a top hat">
 </p>
 
-<h1 align="center">moko</h1>
+<h1 align="center">myoko</h1>
 
 <p align="center">
   <i>a tiny eyeball in a top hat who lives next to your notch<br>and gets very, very bloodshot if you don't take breaks.</i>
@@ -10,25 +10,25 @@
 
 ---
 
-hi, i'm moko 👁️🎩
+hi, i'm myoko 👁️🎩
 
-my name comes from *oko*, old russian for "eye". i sit in your menu bar and watch you work. the longer you stare at your screen, the redder i get. when it's time for a break, i come and get you.
+my name is *my oko*: "my eye". *oko* is old russian for "eye", and i am very much yours. i sit in your menu bar and watch you work. the longer you stare at your screen, the redder i get. when it's time for a break, i come and get you.
 
 - 👀 **every 20 minutes:** look at something far away (6 m or more) for 20 seconds
 - 🚶 **every hour:** go for a little walk. i hold the screen for 2 minutes so you actually go
 - 🧅 **not into eyeballs?** pick the onion from the menu. it's much calmer than me
 
-![moko's moods, the bloodshot ramp, and the onion](docs/characters.png)
+![myoko's moods, the bloodshot ramp, and the onion](docs/characters.png)
 
-## 🛠️ adopt a moko
+## 🛠️ adopt a myoko
 
 you need macOS 13 or newer and the Xcode command line tools.
 
 ```bash
-git clone https://github.com/termvato/moko.git
-cd moko
+git clone https://github.com/termvato/myoko.git
+cd myoko
 ./build.sh
-open Moko.app
+open Myoko.app
 ```
 
 i'll appear next to the notch. to move me, hold ⌘ and drag.
@@ -68,7 +68,7 @@ my timings live at the top of [`Sources/main.swift`](Sources/main.swift). change
 to see me in action without waiting 20 minutes:
 
 ```bash
-MOKO_EYE_SECONDS=3 Moko.app/Contents/MacOS/Moko --eye-now
+MYOKO_EYE_SECONDS=3 Myoko.app/Contents/MacOS/Myoko --eye-now
 ```
 
 `--walk-now` does the same for a walk, and keeps the screen for the full 2 minutes unless you bail.

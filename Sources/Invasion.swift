@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 private enum Timing {
-    static let peek = 3.0       // the warning: Moko peeks up from the bottom edge...
+    static let peek = 3.0       // the warning: Myoko peeks up from the bottom edge...
     static let darken = 8.0     // ...grows while you keep working, and the screen dims from here
     static let land = 9.5       // full size: it stomps, and input locks at this point
     static let intro = 10.0     // the countdown starts once the shake is over
@@ -285,10 +285,10 @@ private final class InvasionWindow: NSWindow {
     override func constrainFrameRect(_ frameRect: NSRect, to screen: NSScreen?) -> NSRect { frameRect }
 }
 
-/// Moko takes over every screen until the break is over.
+/// Myoko takes over every screen until the break is over.
 ///
 /// The first stretch is only a warning: clicks and keys still reach your apps. Input locks when
-/// Moko lands.
+/// Myoko lands.
 ///
 /// Ways out, none of which depend on SwiftUI: hold Esc for 3 seconds, or the watchdog at
 /// duration + 10s. Cmd-Opt-Esc is deliberately left working. The caller must keep a strong

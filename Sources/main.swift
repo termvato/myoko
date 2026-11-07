@@ -4,7 +4,7 @@ import SwiftUI
 
 // All the timing lives here. Change a number and rerun build.sh.
 let eyeEvery: Double = 20 * 60        // look far away every 20 minutes...
-let eyeRest = Double(ProcessInfo.processInfo.environment["MOKO_EYE_SECONDS"] ?? "") ?? 20   // ...for 20 seconds
+let eyeRest = Double(ProcessInfo.processInfo.environment["MYOKO_EYE_SECONDS"] ?? "") ?? 20   // ...for 20 seconds
 let walkLock: Double = 2 * 60         // the takeover holds the screen this long for a walk
 let walkEvery: Double = 60 * 60       // little walk every hour
 let eyeSnooze: Double = 5 * 60
@@ -55,9 +55,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         Sprite.mascot = Mascot(rawValue: UserDefaults.standard.string(forKey: "mascot") ?? "") ?? .eyeball
         activity = ProcessInfo.processInfo.beginActivity(
             options: .userInitiatedAllowingIdleSystemSleep, reason: "break timers")
-        statusItem.autosaveName = "MokoStatusItem"
+        statusItem.autosaveName = "MyokoStatusItem"
         statusItem.button?.imagePosition = .imageOnly
-        statusItem.button?.toolTip = "moko"
+        statusItem.button?.toolTip = "myoko"
         buildMenu()
         renderStatus()
 
@@ -187,7 +187,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         menu.addItem(soundItem)
         menu.addItem(loginItem)
         menu.addItem(.separator())
-        menu.addItem(item("quit moko", #selector(quit)))
+        menu.addItem(item("quit myoko", #selector(quit)))
         statusItem.menu = menu
     }
 
@@ -392,7 +392,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         eyeElapsed = 0   // a walk rests your eyes as well
         walkingUntil = Date().addingTimeInterval(120)
         chime("Glass")
-        celebrate("good.", "moko will hold the fort.")
+        celebrate("good.", "myoko will hold the fort.")
     }
 
     private func closePopup() {

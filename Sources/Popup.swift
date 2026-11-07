@@ -63,7 +63,7 @@ struct PopupView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Stepped pointer aimed at Moko in the menu bar.
+            // Stepped pointer aimed at Myoko in the menu bar.
             Canvas { ctx, size in
                 let x = model.pointerX - 2
                 for row in 0..<3 {
@@ -124,7 +124,7 @@ enum Scene {
     static var width: CGFloat { CGFloat(cols) * cell }
     static var height: CGFloat { CGFloat(rows) * cell }
 
-    /// Moko stands taller than the scenery's pixels so it reads as the main character.
+    /// Myoko stands taller than the scenery's pixels so it reads as the main character.
     private static let spriteScale: CGFloat = 5
 
     private static func rgb(_ hex: UInt32) -> CGColor {
