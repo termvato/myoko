@@ -141,9 +141,12 @@ enum Sprite {
         out[15] = Array(feet[0])
         out[16] = Array(feet[1])
 
-        // Past the limit the eye starts to bleed a little.
+        // Past the limit the eye cries blood: a bead clings to the outer edge and a
+        // drop falls from it. Keep it clear of the gap between the legs.
         if mascot == .eyeball, strain > 0.9, mood != .happy {
-            out[15 + Int(t * 2) % 2][7] = "R"
+            let edge = 12 + offset
+            out[edge][2] = "R"
+            out[edge + 1 + Int(t * 3) % 3][2] = "R"
         }
         for (x, y, c) in extras { out[y][x] = c }
         return out
