@@ -59,6 +59,7 @@ too much? untick **take over the screen** in my menu and i'll just send a little
 - **on a call?** if a mic or camera is in use, i send a polite popup instead of stomping on your meeting. i only check whether a device is running, so i never turn one on or ask for permission
 - **stepped away?** after 5 minutes with no input, or when your Mac wakes up, i reset. you already had your break
 - **watching videos?** a playing video still counts as screen time, even though you're not touching anything. calls and screen sharing count the same way
+- **two breaks at once?** a walk counts as a look-far too. if a look-far is due within 3 minutes of a walk, i wait and you only get the walk
 - **privacy:** no network, no analytics, no accounts. i only watch *you*, and only metaphorically
 
 ## ⏱️ changing my schedule

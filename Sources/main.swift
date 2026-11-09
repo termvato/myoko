@@ -9,6 +9,7 @@ let walkLock: Double = 2 * 60         // the takeover holds the screen this long
 let walkEvery: Double = 60 * 60       // little walk every hour
 let eyeSnooze: Double = 5 * 60
 let walkSnooze: Double = 10 * 60
+let eyeJoinsWalkWithin: Double = 3 * 60   // a look-far due this close to a walk waits, and the walk counts as both
 let awayAfter: Double = 5 * 60        // no input this long, and no video playing, means you already took a break
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
@@ -102,9 +103,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         if walkElapsed >= walkEvery {
             show(.walk)
-        } else if eyeElapsed >= eyeEvery {
+        } else if eyeElapsed >= eyeEvery && !eyeJoinsWalk {
             show(.eyes)
         }
+    }
+
+    /// The next look-far lands so close before a walk that the walk can cover it.
+    private var eyeJoinsWalk: Bool {
+        let walkLeft = walkEvery - walkElapsed
+        return walkLeft <= eyeJoinsWalkWithin && eyeEvery - eyeElapsed <= walkLeft
     }
 
     @objc private func resetTimers() {
@@ -208,7 +215,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             pauseLine.isHidden = true
             resumeItem.isHidden = false
         } else {
-            statusLine.title = "look far in \(minutes(eyeEvery - eyeElapsed))"
+            statusLine.title = eyeJoinsWalk ? "look far on your walk" : "look far in \(minutes(eyeEvery - eyeElapsed))"
             pauseLine.title = "walk in \(minutes(walkEvery - walkElapsed))"
             pauseLine.isHidden = false
             resumeItem.isHidden = true
@@ -374,13 +381,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     private func skip() {
-        if active == .walk { walkElapsed = 0 } else { eyeElapsed = 0 }
+        if active == .walk {
+            walkElapsed = 0
+            delayEyesAfterDismissedWalk()
+        } else {
+            eyeElapsed = 0
+        }
         closePopup()
+    }
+
+    /// A dismissed walk rested nothing, but a look-far right on its heels would be rude.
+    private func delayEyesAfterDismissedWalk() {
+        eyeElapsed = min(eyeElapsed, eyeEvery - eyeSnooze)
     }
 
     private func snooze() {
         if active == .walk {
             walkElapsed = walkEvery - walkSnooze
+            delayEyesAfterDismissedWalk()
         } else {
             eyeElapsed = eyeEvery - eyeSnooze
         }
